@@ -7,15 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB329E03F99003417A0 /* SettingsView.swift */; };
+		F16C8FB629E076E8003417A0 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB529E076E8003417A0 /* Util.swift */; };
 		F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6729E03AE8003BE352 /* AyoApp.swift */; };
 		F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6929E03AE8003BE352 /* ContentView.swift */; };
 		F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6B29E03AE9003BE352 /* Assets.xcassets */; };
 		F1C00D6F29E03AE9003BE352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6E29E03AE9003BE352 /* Preview Assets.xcassets */; };
 		F1C00D7129E03AE9003BE352 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7029E03AE9003BE352 /* Persistence.swift */; };
 		F1C00D7429E03AE9003BE352 /* Ayo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7229E03AE9003BE352 /* Ayo.xcdatamodeld */; };
+		F1C00D7B29E03B35003BE352 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7A29E03B35003BE352 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F16C8FB329E03F99003417A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F16C8FB529E076E8003417A0 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		F1C00D6429E03AE8003BE352 /* Ayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +28,7 @@
 		F1C00D6E29E03AE9003BE352 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1C00D7029E03AE9003BE352 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1C00D7329E03AE9003BE352 /* Ayo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ayo.xcdatamodel; sourceTree = "<group>"; };
+		F1C00D7A29E03B35003BE352 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +67,9 @@
 				F1C00D7029E03AE9003BE352 /* Persistence.swift */,
 				F1C00D7229E03AE9003BE352 /* Ayo.xcdatamodeld */,
 				F1C00D6D29E03AE9003BE352 /* Preview Content */,
+				F1C00D7A29E03B35003BE352 /* CardView.swift */,
+				F16C8FB329E03F99003417A0 /* SettingsView.swift */,
+				F16C8FB529E076E8003417A0 /* Util.swift */,
 			);
 			path = Ayo;
 			sourceTree = "<group>";
@@ -146,7 +155,10 @@
 				F1C00D7129E03AE9003BE352 /* Persistence.swift in Sources */,
 				F1C00D7429E03AE9003BE352 /* Ayo.xcdatamodeld in Sources */,
 				F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */,
+				F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */,
+				F16C8FB629E076E8003417A0 /* Util.swift in Sources */,
 				F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */,
+				F1C00D7B29E03B35003BE352 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

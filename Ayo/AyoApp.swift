@@ -13,8 +13,19 @@ struct AyoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView{
+                ContentView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Image(systemName: "menucard.fill")
+                    }
+                SettingsView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Image(systemName: "gear")
+                    }
+            }
+            
         }
     }
 }
