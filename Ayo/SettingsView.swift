@@ -20,26 +20,30 @@ struct SettingsView: View {
     var body: some View {
         NavigationStack {
             List{
-                VStack{
-                    Text("Change active category")
-                        .fontWeight(.bold)
-                    Picker("Category: ", selection: $selectedCategory) {
-                        ForEach(Category.allCases, id: \.rawValue) { cat in
-                            Text(categoryString(cat))
-                            // TODO: actually set category
+                Section {
+                    VStack{
+                        Text("Change active category")
+                            .fontWeight(.bold)
+                        Picker("Category: ", selection: $selectedCategory) {
+                            ForEach(Category.allCases, id: \.rawValue) { cat in
+                                Text(categoryString(cat))
+                                // TODO: actually set category
+                            }
                         }
+                        Text("3 of \(items.count) cards active")
+                            .font(.footnote)
                     }
-                    Text("3 of \(items.count) cards active")
-                        .font(.footnote)
+                    
+                    NavigationLink {
+                        EditCardsView()
+                    } label: {
+                        Text("mange cards")
+                    }
                 }
                 
-                NavigationLink {
-                    EditCardsView()
-                } label: {
-                    Text("mange cards")
+                Section {
+                    CreateCard()
                 }
-                
-                CreateCard()
             }
         }
     }

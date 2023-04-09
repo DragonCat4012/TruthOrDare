@@ -15,7 +15,7 @@ struct CreateCard: View {
     @State var cardTruth = false
     @State var cardShots = false
     @State var cardGroupactivity = false
-    @State var category: Category = .familyfriendly
+    @State var selectedCategory = 2
     
     var body: some View {
         VStack {
@@ -24,7 +24,12 @@ struct CreateCard: View {
             Toggle("Is Truth", isOn: $cardTruth)
             Toggle("Is shots", isOn: $cardShots)
             Toggle("Is groupActivity", isOn: $cardGroupactivity)
-            //category
+            
+            Picker("Category: ", selection: $selectedCategory) {
+                ForEach(Category.allCases, id: \.rawValue) { cat in
+                    Text(categoryString(cat))
+                }
+            }
             
             ZStack {
                 RoundedRectangle(cornerRadius: 8)
@@ -32,13 +37,14 @@ struct CreateCard: View {
                     .frame(height: 40)
                 Text("add card")
             }.onTapGesture {
+                print(selectedCategory)
                 if description == "" {return}
                 addItem()
                 description = ""
                 cardTruth = false
                 cardShots = false
                 cardGroupactivity = false
-                category = .familyfriendly
+                selectedCategory = 2
             }
             
         }.padding()
@@ -51,7 +57,7 @@ struct CreateCard: View {
         newItem.truth = cardTruth
         newItem.shots = cardShots
         newItem.groupActivity = cardGroupactivity
-        newItem.category = Int64(category.rawValue)
+        newItem.category = Int64(selectedCategory)
         
         do {
             try viewContext.save()
