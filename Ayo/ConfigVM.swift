@@ -10,6 +10,7 @@ import Foundation
 
 class Config: ObservableObject {
     @Published var activeCard: Item?
+    @Published var activeCategory = 2
 
     
     func updateViews(){

@@ -106,7 +106,7 @@ struct ContentView: View {
                 
             }.padding()
                 .sheet(isPresented: $settingspresented) {
-                    SettingsView()
+                    SettingsView(vm: vm)
                 }
         }
     }

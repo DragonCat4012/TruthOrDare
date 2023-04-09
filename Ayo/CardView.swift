@@ -17,14 +17,14 @@ struct CardView: View {
     @ObservedObject var vm: Config
     
     var body: some View {
-        var card = vm.activeCard
+        let card = vm.activeCard
         ZStack {
             if (card == nil) {
                 RoundedRectangle(cornerRadius: 8).fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
                 Text("oh no")
             } else{
-                var card = vm.activeCard!
+                let card = vm.activeCard!
                 let cat = getCategory(card.category)
                 
                 RoundedRectangle(cornerRadius: 8)

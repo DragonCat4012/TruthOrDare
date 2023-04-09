@@ -27,6 +27,7 @@
 		F1B221BA29E2E8EC00A97835 /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
 		F1B221BC29E2FEE500A97835 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
 		F1B221BE29E30ADD00A97835 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
+		F1B221C029E30CFC00A97835 /* DemoData.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = DemoData.geojson; sourceTree = "<group>"; };
 		F1C00D6429E03AE8003BE352 /* Ayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +68,7 @@
 		F1C00D6629E03AE8003BE352 /* Ayo */ = {
 			isa = PBXGroup;
 			children = (
+				F1B221C029E30CFC00A97835 /* DemoData.geojson */,
 				F1C00D6729E03AE8003BE352 /* AyoApp.swift */,
 				F1B221BC29E2FEE500A97835 /* ConfigVM.swift */,
 				F1C00D6929E03AE8003BE352 /* ContentView.swift */,

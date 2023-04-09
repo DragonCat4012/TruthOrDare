@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Foundation
+import CoreData
 
 struct SettingsView: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -15,7 +17,9 @@ struct SettingsView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @State var selectedCategory = 2
+    @State var activeItems = 0
+    
+    @ObservedObject var vm: Config
     
     var body: some View {
         NavigationStack {
@@ -24,13 +28,12 @@ struct SettingsView: View {
                     VStack{
                         Text("Change active category")
                             .fontWeight(.bold)
-                        Picker("Category: ", selection: $selectedCategory) {
+                        Picker("Category: ", selection: $vm.activeCategory) {
                             ForEach(Category.allCases, id: \.rawValue) { cat in
                                 Text(categoryString(cat))
-                                // TODO: actually set category
                             }
                         }
-                        Text("3 of \(items.count) cards active")
+                        Text("\(activeItems) of \(items.count) cards active")
                             .font(.footnote)
                     }
                     
@@ -44,8 +47,22 @@ struct SettingsView: View {
                 Section {
                     CreateCard()
                 }
+            }.onAppear{
+                getActiveCards()
             }
         }
+    }
+    
+    func getActiveCards() {
+        let fetchRequest: NSFetchRequest<Item>
+        fetchRequest = Item.fetchRequest()
+        
+        fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: vm.activeCategory))
+        do {
+            let objects = try viewContext.fetch(fetchRequest)
+            activeItems = objects.count
+        } catch {}
+        
     }
     
     
