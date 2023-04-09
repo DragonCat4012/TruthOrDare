@@ -39,20 +39,28 @@ struct SettingsView: View {
                     
                     NavigationLink {
                         EditCardsView()
+                            .navigationTitle("Manage Cards")
                     } label: {
-                        Text("mange cards")
+                        Text("Manage Cards")
                     }
                 }
                 
                 Section {
                     CreateCard()
                 }
+                
+                Section {
+                    Text("Load default Data")
+                    Text("Export Data")
+                }
+                
             }.onAppear{
                 getActiveCards()
             }
             .onChange(of: vm.activeCategory) { _ in
                 getActiveCards()
             }
+            .navigationTitle("Settings")
         }
     }
     
