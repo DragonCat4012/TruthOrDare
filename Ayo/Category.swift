@@ -8,9 +8,11 @@
 import Foundation
 
 
-enum Category: Int {
+enum Category: Int, CaseIterable {
     case sporty = 1, familyfriendly = 2, nsfw = 3, cringe = 4
 }
+
+
 
 
 func getCategory(_ num: Int64) -> Category {

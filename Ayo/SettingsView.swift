@@ -15,12 +15,35 @@ struct SettingsView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
+    @State var selectedCategory = 2
+    
     var body: some View {
         List{
+            VStack{
+                Text("Change active category")
+                    .fontWeight(.bold)
+                Picker("Category: ", selection: $selectedCategory) {
+                    ForEach(Category.allCases, id: \.rawValue) { cat in
+                        Text(categoryString(cat))
+                        // TODO: actually set category
+                    }
+                }
+                Text("3 of \(items.count) cards active")
+                    .font(.footnote)
+            }
             Text("manage sets")
-            Text("mange favorites/blocked etc‚")
-            Text("3 von 4 aktiv oder so")
             
+            NavigationLink {
+                EmptyView()
+            } label: {
+                Text("mange favorites cards")
+            }
+            NavigationLink {
+                EmptyView()
+            } label: {
+                Text("mange blocked cards")
+            }
+
             CreateCard()
         
         }

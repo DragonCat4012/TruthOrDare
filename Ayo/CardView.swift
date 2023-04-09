@@ -11,64 +11,86 @@ var cardOrange = Color(red: 242/255, green: 170/255, blue: 92/255)
 var cardYellow = Color(red: 242/255, green: 214/255, blue: 92/255)
 
 struct CardView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
-    @Binding var activeItem: Item?
+    
+    @ObservedObject var vm: Config
     
     var body: some View {
+        var card = vm.activeCard
         ZStack {
-            if (activeItem == nil) {
+            if (card == nil) {
                 RoundedRectangle(cornerRadius: 8).fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
                 Text("oh no")
             } else{
-                let cat = getCategory(activeItem!.category)
+                var card = vm.activeCard!
+                let cat = getCategory(card.category)
                 
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(activeItem!.truth ? cardYellow : cardOrange)
+                    .fill(card.truth ? cardYellow : cardOrange)
                     .shadow(radius: 5)
                 
                 VStack {
                     HStack {
-                        if activeItem!.groupActivity {
+                        if card.groupActivity {
                             Image(systemName: "person.2.fill")
                         }
                         
                         Spacer()
                         
                         HStack{
-                            Image(systemName: categoryIcon(activeItem!.category))
+                            Image(systemName: categoryIcon(card.category))
                             Text(categoryString(cat))
-                            Image(systemName: categoryIcon(activeItem!.category))
+                            Image(systemName: categoryIcon(card.category))
                         }
                         Spacer()
-                        if activeItem!.shots {
+                        if card.shots {
                             Image(systemName: "wineglass")
                         }
                         
                     }
                     Spacer()
                     
-                    Text(activeItem?.text ?? "No text")
+                    Text(card.text ?? "No text")
                         .font(.headline)
                     
                     Spacer()
                     
                     HStack {
-                        Image(systemName: "nosign")
+                        Image(systemName: card.blocked ? "xmark.app.fill": "xmark.app")
+                            .onTapGesture {
+                                card.blocked = !card.blocked
+                                saveContext()
+                                vm.updateViews()
+                            }
                         Spacer()
-                        Text("Nr: \(activeItem!.objectID.uriRepresentation().lastPathComponent.trimmingCharacters(in: ["p"]))").font(.footnote)
+                        Text("Nr: \(card.objectID.uriRepresentation().lastPathComponent.trimmingCharacters(in: ["p"]))").font(.footnote)
                         Spacer()
-                        Image(systemName: "star")
+                        Image(systemName: card.liked ? "star.fill" :"star")
+                            .onTapGesture {
+                                card.liked = !card.liked
+                                saveContext()
+                                vm.updateViews()
+                            }
                     }
-                }.padding()}
+                }.padding()
+            }
         }.frame(height: 500).padding()
-        
-        
+    }
+    
+    func saveContext(){
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
-        CardView(activeItem: Binding.constant(nil))
+        CardView( vm: Config())
     }
 }

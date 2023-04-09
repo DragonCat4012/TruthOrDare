@@ -11,6 +11,7 @@ import CoreData
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.managedObjectContext) private var viewContext
+    @ObservedObject var vm = Config()
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
@@ -25,8 +26,6 @@ struct ContentView: View {
         animation: .default)
     var dareCards: FetchedResults<Item>
     
-    @State var activeItem: Item?
-    
     @State var offset = CGSize(width: 0, height: 0)
     @State var cardOpacity = 1.0
     
@@ -36,7 +35,7 @@ struct ContentView: View {
     var body: some View {
         GeometryReader{ geometry in
             VStack {
-                CardView(activeItem: $activeItem)
+                CardView( vm: vm)
                     .offset(offset)
                     .opacity(cardOpacity)
                     .gesture(DragGesture()
@@ -118,11 +117,12 @@ struct ContentView: View {
             self.offset.height = 0
             
             withAnimation{
-                activeItem = dare ? dareCards.randomElement() : truthCards.randomElement()
+                vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
                 self.cardOpacity = 1
             }
         }
     }
+
 }
 
 
