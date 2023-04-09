@@ -14,8 +14,16 @@ struct ContentView: View {
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
+        predicate: NSPredicate(format: "truth == %@", NSNumber(value: true)),
         animation: .default)
-    var items: FetchedResults<Item>
+    var truthCards: FetchedResults<Item>
+    
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
+        predicate: NSPredicate(format: "truth == %@", NSNumber(value: false)),
+        animation: .default)
+    var dareCards: FetchedResults<Item>
     
     @State var activeItem: Item?
     
@@ -94,7 +102,7 @@ struct ContentView: View {
                 }
                 
                 
-                Text("\(items.count) Karten")
+                Text("\(truthCards.count) Karten")
                 
                 
             }.padding()
@@ -108,8 +116,9 @@ struct ContentView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.offset.width = 0
             self.offset.height = 0
+            
             withAnimation{
-                activeItem = items.randomElement()
+                activeItem = dare ? dareCards.randomElement() : truthCards.randomElement()
                 self.cardOpacity = 1
             }
         }
