@@ -16,36 +16,16 @@ struct SettingsView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        VStack{
-            Text("settings ig")
+        List{
             Text("manage sets")
             Text("mange favorites/blocked etc‚")
             Text("3 von 4 aktiv oder so")
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.green)
-                    .frame(height: 40)
-                Text("add card")
-            }.onTapGesture {
-                addItem()
-            }
-        }.padding()
+            CreateCard()
+        
+        }
     }
     
-    
-    private func addItem() {
-            let newItem = Item(context: viewContext)
-            newItem.text = "aha interesting"
-            newItem.truth = true
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-    }
     
     private func deleteItems(offsets: IndexSet) {
             offsets.map { items[$0] }.forEach(viewContext.delete)
