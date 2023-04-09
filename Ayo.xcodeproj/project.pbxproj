@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB329E03F99003417A0 /* SettingsView.swift */; };
 		F16C8FB629E076E8003417A0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB529E076E8003417A0 /* Category.swift */; };
+		F1B221BB29E2E8EC00A97835 /* CreateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BA29E2E8EC00A97835 /* CreateCard.swift */; };
 		F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6729E03AE8003BE352 /* AyoApp.swift */; };
 		F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6929E03AE8003BE352 /* ContentView.swift */; };
 		F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6B29E03AE9003BE352 /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		F16C8FB329E03F99003417A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F16C8FB529E076E8003417A0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		F1B221BA29E2E8EC00A97835 /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
 		F1C00D6429E03AE8003BE352 /* Ayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				F1C00D7A29E03B35003BE352 /* CardView.swift */,
 				F16C8FB329E03F99003417A0 /* SettingsView.swift */,
 				F16C8FB529E076E8003417A0 /* Category.swift */,
+				F1B221BA29E2E8EC00A97835 /* CreateCard.swift */,
 			);
 			path = Ayo;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				F1C00D7429E03AE9003BE352 /* Ayo.xcdatamodeld in Sources */,
 				F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */,
 				F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */,
+				F1B221BB29E2E8EC00A97835 /* CreateCard.swift in Sources */,
 				F16C8FB629E076E8003417A0 /* Category.swift in Sources */,
 				F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */,
 				F1C00D7B29E03B35003BE352 /* CardView.swift in Sources */,
@@ -295,6 +299,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -324,6 +329,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

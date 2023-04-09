@@ -18,7 +18,8 @@ struct SettingsView: View {
     var body: some View {
         VStack{
             Text("settings ig")
-            
+            Text("manage sets")
+            Text("mange favorites/blocked etc‚")
             Text("3 von 4 aktiv oder so")
             
             ZStack {
