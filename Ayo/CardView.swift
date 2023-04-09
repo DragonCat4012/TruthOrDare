@@ -12,27 +12,50 @@ struct CardView: View {
     
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 8).fill(activeItem != nil ?  Color.orange : Color.gray)
-               
-            VStack {
-                HStack {
-                    Image(systemName: "person.2.fill")
+            if (activeItem == nil) {
+                RoundedRectangle(cornerRadius: 8).fill(activeItem != nil ?  Color.orange : Color.gray)
+                Text("oh no")
+            } else{
+                let cat = getCategory(activeItem!.category)
+                
+                RoundedRectangle(cornerRadius: 8).fill(Color.orange)
+                
+                VStack {
+                    HStack {
+                        if activeItem!.groupActivity {
+                            Image(systemName: "person.2.fill")
+                        }
+                        
+                        Spacer()
+                        
+                        HStack{
+                            Image(systemName: categoryIcon(activeItem!.category))
+                            Text(categoryString(cat))
+                            Image(systemName: categoryIcon(activeItem!.category))
+                        }
+                        Spacer()
+                        if activeItem!.shots {
+                            Image(systemName: "wineglass")
+                        }
+                        
+                    }
                     Spacer()
-                    Text("category")
+                    
+                    Text(activeItem?.text ?? "No text")
+                        .font(.headline)
+                    
                     Spacer()
-                    Image(systemName: "wineglass")
-                }
-                Spacer()
-                Text(activeItem?.text ?? "No text")
-                Spacer()
-                HStack {
-                    Image(systemName: "nosign")
-                    Spacer()
-                    Image(systemName: "star")
-                }
-            }.padding()
+                    
+                    HStack {
+                        Image(systemName: "nosign")
+                        Spacer()
+                        Text("Nr: \(activeItem!.objectID.uriRepresentation().lastPathComponent.trimmingCharacters(in: ["p"]))").font(.footnote)
+                        Spacer()
+                        Image(systemName: "star")
+                    }
+                }.padding()}
         }.frame(height: 500).padding()
-       
+        
     }
 }
 
