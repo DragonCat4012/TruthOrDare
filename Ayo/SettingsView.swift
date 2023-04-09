@@ -50,6 +50,9 @@ struct SettingsView: View {
             }.onAppear{
                 getActiveCards()
             }
+            .onChange(of: vm.activeCategory) { _ in
+                getActiveCards()
+            }
         }
     }
     

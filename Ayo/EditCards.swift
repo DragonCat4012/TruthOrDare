@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EditCardsView: View {
+    @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
         animation: .default)
@@ -34,6 +35,21 @@ struct EditCardsView: View {
                                     Text("\(card.objectID.uriRepresentation().lastPathComponent.trimmingCharacters(in: ["p"]))")
                                     Text(card.text ?? "-")
                                         .lineLimit(1)
+                                }.swipeActions {
+                                    Button {
+                                        card.blocked = !card.blocked
+                                        saveContext()
+                                    } label: {
+                                        Image(systemName: "nosign")
+                                    }
+
+                                    Button {
+                                        viewContext.delete(card)
+                                        saveContext()
+                                    } label: {
+                                        Image(systemName: "trash")
+                                    }  .tint(.red)
+                                  
                                 }
                             }
                         }
@@ -41,6 +57,14 @@ struct EditCardsView: View {
                 }
             }
         }
-        
+    }
+    
+    func saveContext(){
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }
