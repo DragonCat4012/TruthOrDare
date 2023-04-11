@@ -22,7 +22,7 @@ struct CardView: View {
             if (card == nil) {
                 RoundedRectangle(cornerRadius: 8).fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
-                Text("oh no")
+                Text("No active Card selected, swipe or press button to start :3")
             } else{
                 let card = vm.activeCard!
                 let cat = getCategory(card.category)
