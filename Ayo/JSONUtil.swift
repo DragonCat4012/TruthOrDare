@@ -8,27 +8,6 @@
 import Foundation
 import CoreData
 
-struct JSON {
-    static func loadJSON() ->[Item]{
-        var values: [Item] = [ ]
-        let decoder = JSONDecoder()
-
-        
-        do {
-            print("file missing qwq")
-            if let file = Bundle.main.path(forResource: "demo", ofType: "json"){
-                print("ayo")
-                let json = try! String(contentsOfFile: file, encoding: String.Encoding.utf8).data(using: .utf8)!
-                print("ayo 222")
-                print(json)
-                
-                let products = try! decoder.decode([Item].self, from: json)
-                values = products
-            }
-        }
-        return values
-    }
-}
 
 extension CodingUserInfoKey {
     static let managedObjectContext = CodingUserInfoKey(rawValue: "managedObjectContext")!
