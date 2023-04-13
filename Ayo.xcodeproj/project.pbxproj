@@ -13,6 +13,7 @@
 		F1B221BB29E2E8EC00A97835 /* CreateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BA29E2E8EC00A97835 /* CreateCard.swift */; };
 		F1B221BD29E2FEE500A97835 /* ConfigVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BC29E2FEE500A97835 /* ConfigVM.swift */; };
 		F1B221BF29E30ADD00A97835 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BE29E30ADD00A97835 /* EditCards.swift */; };
+		F1B347F429E8524E00C2F2A2 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B347F329E8524E00C2F2A2 /* demo.json */; };
 		F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6729E03AE8003BE352 /* AyoApp.swift */; };
 		F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6929E03AE8003BE352 /* ContentView.swift */; };
 		F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6B29E03AE9003BE352 /* Assets.xcassets */; };
@@ -29,7 +30,7 @@
 		F1B221BA29E2E8EC00A97835 /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
 		F1B221BC29E2FEE500A97835 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
 		F1B221BE29E30ADD00A97835 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
-		F1B221C029E30CFC00A97835 /* DemoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = DemoData.json; sourceTree = "<group>"; };
+		F1B347F329E8524E00C2F2A2 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
 		F1C00D6429E03AE8003BE352 /* Ayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +71,7 @@
 		F1C00D6629E03AE8003BE352 /* Ayo */ = {
 			isa = PBXGroup;
 			children = (
-				F1B221C029E30CFC00A97835 /* DemoData.json */,
+				F1B347F329E8524E00C2F2A2 /* demo.json */,
 				F1C00D6729E03AE8003BE352 /* AyoApp.swift */,
 				F1B221BC29E2FEE500A97835 /* ConfigVM.swift */,
 				F1C00D6929E03AE8003BE352 /* ContentView.swift */,
@@ -154,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B347F429E8524E00C2F2A2 /* demo.json in Resources */,
 				F1C00D6F29E03AE9003BE352 /* Preview Assets.xcassets in Resources */,
 				F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */,
 			);

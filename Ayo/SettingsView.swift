@@ -13,6 +13,7 @@ struct SettingsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
+        entity: Item.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
@@ -50,7 +51,13 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    Text("Load default Data")
+                    
+                    Button {
+                        loadDemoData()
+                    } label: {
+                        Text("Load default Data")
+                    }
+
                     Text("Export Data")
                 }
                 
@@ -68,6 +75,7 @@ struct SettingsView: View {
         let fetchRequest: NSFetchRequest<Item>
         fetchRequest = Item.fetchRequest()
         
+        fetchRequest.entity = Item.entity()
         fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: vm.activeCategory))
         do {
             let objects = try viewContext.fetch(fetchRequest)
@@ -80,6 +88,25 @@ struct SettingsView: View {
     private func deleteItems(offsets: IndexSet) {
         offsets.map { items[$0] }.forEach(viewContext.delete)
         
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
+    }
+    
+    private func loadDemoData(){
+        let decoder = JSONDecoder()
+        decoder.userInfo[CodingUserInfoKey.managedObjectContext] = viewContext
+        
+        do {
+            if let file = Bundle.main.path(forResource: "demo", ofType: "json"){
+                let json = try! String(contentsOfFile: file, encoding: String.Encoding.utf8).data(using: .utf8)!
+                let products = try! decoder.decode([Item].self, from: json)
+            }
+        }
+    
         do {
             try viewContext.save()
         } catch {

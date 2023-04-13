@@ -10,6 +10,7 @@ import SwiftUI
 struct EditCardsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @FetchRequest(
+        entity: Item.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
         animation: .default)
     var items: FetchedResults<Item>

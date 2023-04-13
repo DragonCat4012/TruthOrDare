@@ -13,7 +13,9 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var vm = Config()
     
+    
     @FetchRequest(
+        entity: Item.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
         predicate: NSPredicate(format: "truth == %@", NSNumber(value: true)),
         animation: .default)
@@ -21,6 +23,7 @@ struct ContentView: View {
     
     
     @FetchRequest(
+        entity: Item.entity(),
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
         predicate: NSPredicate(format: "truth == %@", NSNumber(value: false)),
         animation: .default)

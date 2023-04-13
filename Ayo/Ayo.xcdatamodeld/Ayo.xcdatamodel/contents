@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22A8381" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="category">
         <attribute name="blocked" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="category" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="groupActivity" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -8,11 +8,5 @@
         <attribute name="shots" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="text" optional="YES" attributeType="String"/>
         <attribute name="truth" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
-        <fetchedProperty name="dareQuests" optional="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Item" predicateString="truth == false"/>
-        </fetchedProperty>
-        <fetchedProperty name="truthQuests" optional="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Item" predicateString="truth == true"/>
-        </fetchedProperty>
     </entity>
 </model>
