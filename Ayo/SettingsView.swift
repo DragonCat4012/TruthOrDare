@@ -60,11 +60,16 @@ struct SettingsView: View {
                     } label: {
                         Text("Load default Data")
                     }
-                   /* Button {
-                        exportData()
+                    /* Button {
+                     exportData()
+                     } label: {
+                     Text("Export all Data")
+                     }*/
+                    Button(role: .destructive) {
+                        addDefaultData()
                     } label: {
-                        Text("Export all Data")
-                    }*/
+                        Text("Delete all Cards")
+                    }
                 }
                 
             }.onAppear{
@@ -94,7 +99,6 @@ struct SettingsView: View {
         } catch {}
         
     }
-    
     
     private func deleteItems(offsets: IndexSet) {
         offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -144,5 +148,32 @@ struct SettingsView: View {
         }
         string += "]}"
         return string
+    }
+    
+    func addDefaultData() {
+        items.forEach { i in
+            viewContext.delete(i)
+        }
+        
+        let newItem = Item(context: viewContext)
+        newItem.text = "Example Truth"
+        newItem.truth = true
+        newItem.shots = false
+        newItem.groupActivity = false
+        newItem.category = 1
+        
+        let newItem2 = Item(context: viewContext)
+        newItem2.text = "Example Dare"
+        newItem2.truth = false
+        newItem2.shots = false
+        newItem2.groupActivity = false
+        newItem2.category = 1
+        
+        do {
+            try viewContext.save()
+        } catch {
+            let nsError = error as NSError
+            fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+        }
     }
 }

@@ -4,6 +4,369 @@
     "truth": false,
     "category": 2,
     "groupActivity": false,
-    "shots": true,
+    "shots": true
+},
+{
+    "text": "Was war ist das Peinlichste was du je gesucht hast",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was würdest du auf keinem Fall für Geld machen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Worin liegt deiner Meinung nach dein größte Schwäche/negative Eigenschaft?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn alle [aus der Runde] im sterben liegen würden und du jemandem helfen müsstest, wer wären die zwei ehesten?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Was ist dein Lebenswunsch?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Was hast du schon alles gemacht um einen Jungen bzw. Mädchen zu beeindrucken?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wie würdest du gerne heiraten?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Was ist das peinlichste was dir je passiert ist?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Hast du schon Sex im Freien gehabt und bist dabei erwischt worden?",
+    "truth": true,
+    "category": 3,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was ist das merkwürdigste was du dir je angezogen hast?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Mit wem aus der Runde würdest du am liebsten unwiderruflich  in einem zeitlosen Raum verbringen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was ist deine größte Motivation im Leben?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Was ist bisher die schlimmste Verletzung deiner Gefühle gewesen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "In wen aus deiner Klasse warst du schonmal verliebt?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was ist deine Meinung zu einem Klassenausflug ins Bordell?",
+    "truth": true,
+    "category": 4,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Hast du schonmal gelogen nur um eine peinliche Situation verdeckt zu halten wen ja welche?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was ist das Kostenspieligste gewesen was du je zerstört hast?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Warum nimmst du meistens keine Pflicht?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn dein Job etwas mit erotischem zutun haben müsste was wäre es?",
+    "truth": true,
+    "category": 3,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Hast du dir schon mal jemandem aus der Runde in Unterwäsche vorgestellt? ^^",
+    "truth": true,
+    "category": 3,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was war das Notgeilste was du im erotic-roleplay geschrieben hast?",
+    "truth": true,
+    "category": 3,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn mit dir jemand 1 Tag lang machen könnte was er wöllte, wen aus der Runde würdest du wählen und was würdest du von dieser Person erwarten?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du irgendjemanden zu etwas zwingen könntest, zu was würdest du ihn/sie zwingen und wen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Von welchen Person würdest du dir wünschen, dass sie dich öfters anlächelt?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du uns beiden eine Fähigkeit geben würdest die wir nur zu zweit benutzen könnten was wäre es?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": false
+},
+{
+    "text": "Wenn du von etwas eine Art Traum haben könntest den du immer an- abschalten könntest und eine Person aus der Runde mit drin sein könnte was wäre es und wen würdest du mit reinnehmen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du mit einer Person deiner Wahl jeden Traum den du oder die andere Person haben zusammen durchleben wer wäre das und welche Art von Träumen würdest du lieber vermeiden danach?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Wenn du der erste Mensch wärst der auf der bis daher unberührten Erde ankommt was wäre deine erste Aktion?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du eine Farbe mit einer Person verbinden müsstest wer wäre es, welche Farbe wäre es und warum?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was ist das komischste was  du mit deinem Handy bereits gemacht oder erlebt hast?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Was ist die schlimmste Folter der du dich unterziehen musstest?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Was war das komischste was du für Geld gemacht hast?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du etwas erfinden könntest was eigentlich laut der Gesetze dieser Welt nicht funktioniert was wäre es und warum genau das?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Wenn du dir die Zeit nehmen würdest um eine ordentliche Variante  von einer Verkleidung für Halloween zu machen was würdest du bauen?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+
+
+
+
+{
+    "text": "Fotografiere dich wie du irgendjemanden bedrängst und schicke es 'Ausversehen' deinen Eltern mit der Unterschrift es ist nicht das wonach es aussieht und wenn sie dich fragen was das soll antworte mit unklaren Antworten",
+    "truth": false,
+    "category": 3,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Du musst dir ein Mädchen aussuchen und dann über ihr 5 Liegestütze machen",
+    "truth": false,
+    "category": 1,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Benimm dich zwei Minuten wie ein Huhn.",
+    "truth": false,
+    "category": 2,
+    "groupActivity": true,
+    "shots": false
+},
+{
+    "text": "Mache einer Person deiner Wahl  einen Heiratsantrag",
+    "truth": false,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+{
+    "text": "Versuch eine Person deiner Wahl zu verführen und gehe dabei soweit du willst (stop when they feel uncomfortable pls)?",
+    "truth": false,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+{
+    "text": "Halte mit der person links von dir 5 min Händchen",
+    "truth": false,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Laufe wie auf einem Catwalk",
+    "truth": false,
+    "category": 2,
+    "groupActivity": false,
+    "shots": false
+},
+
+{
+    "text": "Singe dein Lieblingslied",
+    "truth": false,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Du musst dich für 2 Minuten auf den Schoß der Person rechts von dir",
+    "truth": false,
+    "category": 2,
+    "groupActivity": false,
+    "shots": true
+},
+
+{
+    "text": "Was war dein letzter Traum an den du dich erinnerst?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": false
+},
+{
+    "text": "Mit wem hattest du deinen ersten Kuss?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Wonach hast du als letztes gegoogelt?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Hast du schon mal sexy Bilder von dir verschickt?",
+    "truth": true,
+    "category": 3,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Wofür hast du dich in letzter Zeit geschämt?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Wie sieht dein Traumdate aus?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Was war deine letzte Lüge?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
+},
+{
+    "text": "Was würdest du machen, wenn du nur noch eine Stunde zu leben hättest?",
+    "truth": true,
+    "category": 2,
+    "groupActivity": true,
+    "shots": true
 },
 ]
