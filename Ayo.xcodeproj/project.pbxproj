@@ -18,7 +18,6 @@
 		F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6729E03AE8003BE352 /* AyoApp.swift */; };
 		F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6929E03AE8003BE352 /* ContentView.swift */; };
 		F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6B29E03AE9003BE352 /* Assets.xcassets */; };
-		F1C00D6F29E03AE9003BE352 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6E29E03AE9003BE352 /* Preview Assets.xcassets */; };
 		F1C00D7129E03AE9003BE352 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7029E03AE9003BE352 /* Persistence.swift */; };
 		F1C00D7429E03AE9003BE352 /* Ayo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7229E03AE9003BE352 /* Ayo.xcdatamodeld */; };
 		F1C00D7B29E03B35003BE352 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D7A29E03B35003BE352 /* CardView.swift */; };
@@ -37,7 +36,6 @@
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F1C00D6B29E03AE9003BE352 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F1C00D6E29E03AE9003BE352 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1C00D7029E03AE9003BE352 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		F1C00D7329E03AE9003BE352 /* Ayo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Ayo.xcdatamodel; sourceTree = "<group>"; };
 		F1C00D7A29E03B35003BE352 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -54,6 +52,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1B38A1F29E99DC500DD182D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				F16C8FB329E03F99003417A0 /* SettingsView.swift */,
+				F1B221BA29E2E8EC00A97835 /* CreateCard.swift */,
+				F1B221BE29E30ADD00A97835 /* EditCards.swift */,
+				F1B38A1D29E9910B00DD182D /* DocumentView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		F1B38A2029E99DE400DD182D /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				F1C00D7029E03AE9003BE352 /* Persistence.swift */,
+				F16C8FB529E076E8003417A0 /* Category.swift */,
+				F1A5179E29E5D12B00113AFF /* JSONUtil.swift */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
 		F1C00D5B29E03AE8003BE352 = {
 			isa = PBXGroup;
 			children = (
@@ -78,26 +97,12 @@
 				F1B221BC29E2FEE500A97835 /* ConfigVM.swift */,
 				F1C00D6929E03AE8003BE352 /* ContentView.swift */,
 				F1C00D6B29E03AE9003BE352 /* Assets.xcassets */,
-				F1C00D7029E03AE9003BE352 /* Persistence.swift */,
 				F1C00D7229E03AE9003BE352 /* Ayo.xcdatamodeld */,
-				F1C00D6D29E03AE9003BE352 /* Preview Content */,
 				F1C00D7A29E03B35003BE352 /* CardView.swift */,
-				F16C8FB329E03F99003417A0 /* SettingsView.swift */,
-				F16C8FB529E076E8003417A0 /* Category.swift */,
-				F1B221BA29E2E8EC00A97835 /* CreateCard.swift */,
-				F1B221BE29E30ADD00A97835 /* EditCards.swift */,
-				F1A5179E29E5D12B00113AFF /* JSONUtil.swift */,
-				F1B38A1D29E9910B00DD182D /* DocumentView.swift */,
+				F1B38A1F29E99DC500DD182D /* Settings */,
+				F1B38A2029E99DE400DD182D /* lib */,
 			);
 			path = Ayo;
-			sourceTree = "<group>";
-		};
-		F1C00D6D29E03AE9003BE352 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				F1C00D6E29E03AE9003BE352 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,7 +164,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B347F429E8524E00C2F2A2 /* demo.json in Resources */,
-				F1C00D6F29E03AE9003BE352 /* Preview Assets.xcassets in Resources */,
 				F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
