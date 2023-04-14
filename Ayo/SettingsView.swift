@@ -19,6 +19,10 @@ struct SettingsView: View {
     private var items: FetchedResults<Item>
     
     @State var activeItems = 0
+    @State var showDocumentSheet = false
+    @State var showLoading = false
+    
+    @State var fileURL: URL?
     
     @ObservedObject var vm: Config
     
@@ -51,14 +55,16 @@ struct SettingsView: View {
                 }
                 
                 Section {
-                    
                     Button {
                         loadDemoData()
                     } label: {
                         Text("Load default Data")
                     }
-
-                    Text("Export Data")
+                   /* Button {
+                        exportData()
+                    } label: {
+                        Text("Export all Data")
+                    }*/
                 }
                 
             }.onAppear{
@@ -68,6 +74,11 @@ struct SettingsView: View {
                 getActiveCards()
             }
             .navigationTitle("Settings")
+            .sheet(isPresented: $showDocumentSheet) {
+                Text("ay")
+                ShareLink(item: fileURL!, preview:SharePreview("JSON"))
+                //  DocumentPicker(fileURL: $vm.importeJsonURL).onDisappear{ vm.reloadAndSave()}
+            }
         }
     }
     
@@ -103,15 +114,35 @@ struct SettingsView: View {
         do {
             if let file = Bundle.main.path(forResource: "demo", ofType: "json"){
                 let json = try! String(contentsOfFile: file, encoding: String.Encoding.utf8).data(using: .utf8)!
-                let products = try! decoder.decode([Item].self, from: json)
+                _ = try! decoder.decode([Item].self, from: json)
             }
         }
-    
+        
         do {
             try viewContext.save()
         } catch {
             let nsError = error as NSError
             fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
         }
+    }
+    
+    private func exportData(){
+        showLoading = true
+        let data = exportJSON()
+        let url = writeJSON(data)
+        fileURL = url
+        showLoading = false
+        showShareSheet(url: url)
+    }
+    
+    
+    func exportJSON()-> String{
+        var string = " ["
+        
+        for sub in  items {
+            string += "{\"text\": \"\(sub.text ?? "-")\", \"truth\": \(sub.truth), \"category\": \(sub.category), \"groupActivity\":  \"\(sub.groupActivity )\", \"shots\": \"\(sub.shots)\"},"
+        }
+        string += "]}"
+        return string
     }
 }

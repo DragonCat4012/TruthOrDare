@@ -14,6 +14,7 @@
 		F1B221BD29E2FEE500A97835 /* ConfigVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BC29E2FEE500A97835 /* ConfigVM.swift */; };
 		F1B221BF29E30ADD00A97835 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BE29E30ADD00A97835 /* EditCards.swift */; };
 		F1B347F429E8524E00C2F2A2 /* demo.json in Resources */ = {isa = PBXBuildFile; fileRef = F1B347F329E8524E00C2F2A2 /* demo.json */; };
+		F1B38A1E29E9910B00DD182D /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B38A1D29E9910B00DD182D /* DocumentView.swift */; };
 		F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6729E03AE8003BE352 /* AyoApp.swift */; };
 		F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C00D6929E03AE8003BE352 /* ContentView.swift */; };
 		F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C00D6B29E03AE9003BE352 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		F1B221BC29E2FEE500A97835 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
 		F1B221BE29E30ADD00A97835 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
 		F1B347F329E8524E00C2F2A2 /* demo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = demo.json; sourceTree = "<group>"; };
+		F1B38A1D29E9910B00DD182D /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
 		F1C00D6429E03AE8003BE352 /* Ayo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ayo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C00D6729E03AE8003BE352 /* AyoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AyoApp.swift; sourceTree = "<group>"; };
 		F1C00D6929E03AE8003BE352 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				F1B221BA29E2E8EC00A97835 /* CreateCard.swift */,
 				F1B221BE29E30ADD00A97835 /* EditCards.swift */,
 				F1A5179E29E5D12B00113AFF /* JSONUtil.swift */,
+				F1B38A1D29E9910B00DD182D /* DocumentView.swift */,
 			);
 			path = Ayo;
 			sourceTree = "<group>";
@@ -175,6 +178,7 @@
 				F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */,
 				F1B221BB29E2E8EC00A97835 /* CreateCard.swift in Sources */,
 				F1B221BD29E2FEE500A97835 /* ConfigVM.swift in Sources */,
+				F1B38A1E29E9910B00DD182D /* DocumentView.swift in Sources */,
 				F16C8FB629E076E8003417A0 /* Category.swift in Sources */,
 				F1C00D6829E03AE8003BE352 /* AyoApp.swift in Sources */,
 				F1C00D7B29E03B35003BE352 /* CardView.swift in Sources */,

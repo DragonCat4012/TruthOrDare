@@ -36,8 +36,28 @@ class Item: NSManagedObject, Decodable {
         self.shots = try container.decode(Bool.self, forKey: .shots)
         self.groupActivity = try container.decode(Bool.self, forKey: .groupActivity)
         self.category = try container.decode(Int64.self, forKey: .category)
-        
-        print(">>>>>")
-        print(self)
     }
+    
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(text, forKey: .text)
+        try container.encode(truth, forKey: .truth)
+        try container.encode(shots, forKey: .shots)
+        try container.encode(groupActivity, forKey: .groupActivity)
+        try container.encode(category, forKey: .category)
+    }
+}
+
+
+func writeJSON(_ data: String) -> URL{
+    let DocumentDirURL = try! FileManager.default
+        .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true).appendingPathComponent("example").appendingPathExtension("json")
+    
+    do {
+        try data.write(to: DocumentDirURL, atomically: true, encoding: String.Encoding.utf8)
+    } catch let error as NSError {
+        print("Failed writing to URL: \(DocumentDirURL), Error: " + error.localizedDescription)
+    }
+    return DocumentDirURL
 }
