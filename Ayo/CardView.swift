@@ -57,22 +57,22 @@ struct CardView: View {
                     
                     Spacer()
                     
-                    HStack {
-                        Image(systemName: card.blocked ? "xmark.app.fill": "xmark.app")
+                   HStack {
+                       /* Image(systemName: card.blocked ? "xmark.app.fill": "xmark.app")
                             .onTapGesture {
                                 card.blocked = !card.blocked
                                 saveContext()
                                 vm.updateViews()
-                            }
+                            }*/
                         Spacer()
                         Text("Nr: \(card.objectID.uriRepresentation().lastPathComponent.trimmingCharacters(in: ["p"]))").font(.footnote)
                         Spacer()
-                        Image(systemName: card.liked ? "star.fill" :"star")
+                        /*Image(systemName: card.liked ? "star.fill" :"star")
                             .onTapGesture {
                                 card.liked = !card.liked
                                 saveContext()
                                 vm.updateViews()
-                            }
+                            }*/
                     }
                 }.padding()
             }

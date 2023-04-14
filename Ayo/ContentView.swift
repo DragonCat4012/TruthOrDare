@@ -78,7 +78,6 @@ struct ContentView: View {
                             cardRotation = 180
                             cardOpacity = 0
                         }
-                        cardRotation = 0
                         showNewCard()
                     }
                     
@@ -102,7 +101,6 @@ struct ContentView: View {
                             cardRotation = 180
                             cardOpacity = 0
                         }
-                        cardRotation = 0
                         showNewCard(true)
                     }
                 }
@@ -120,7 +118,8 @@ struct ContentView: View {
     
     func showNewCard(_ dare: Bool = false){
         self.cardOpacity = 0
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            cardRotation = 0
             self.offset.width = 0
             self.offset.height = 0
             vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
