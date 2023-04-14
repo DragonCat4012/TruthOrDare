@@ -132,7 +132,7 @@ struct ContentView: View {
             self.offset.height = 0
             vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
             
-            withAnimation{
+            withAnimation(.spring()){
                 self.cardOpacity = 1
             }
         }
