@@ -10,6 +10,10 @@ import SwiftUI
 var cardOrange = Color(red: 242/255, green: 170/255, blue: 92/255)
 var cardYellow = Color(red: 242/255, green: 214/255, blue: 92/255)
 
+
+var cardOrangeDarker = Color(red: 181/255, green: 108/255, blue: 37/255)
+var cardYellowDarker = Color(red: 207/255, green: 175/255, blue: 14/255) 
+
 struct CardView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
@@ -28,7 +32,7 @@ struct CardView: View {
                 let cat = getCategory(card.category)
                 
                 RoundedRectangle(cornerRadius: 8)
-                    .fill(card.truth ? cardYellow : cardOrange)
+                    .fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(radius: 5)
                 
                 VStack {
@@ -75,8 +79,21 @@ struct CardView: View {
                             }*/
                     }
                 }.padding()
+                    .foregroundColor(textColor())
             }
         }.frame(height: 500).padding()
+    }
+    
+    func textColor()->Color{
+        guard let card = vm.activeCard else {
+            return Color.red
+        }
+        if card.truth {
+            return colorScheme == .dark ? cardYellow : cardYellowDarker
+        } else {
+            return  colorScheme == .dark ? cardOrange : cardOrangeDarker
+        }
+   
     }
     
     func saveContext(){

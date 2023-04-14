@@ -38,81 +38,89 @@ struct ContentView: View {
     
     var body: some View {
         GeometryReader{ geometry in
-            VStack {
-                CardView( vm: vm)
-                    .rotation3DEffect(Angle(degrees: cardRotation), axis: (x: 0, y: 1, z: 0))
-                    .offset(offset)
-                    .opacity(cardOpacity)
-                    .gesture(DragGesture()
-                        .onChanged({ gesture in
-                            self.offset.width = gesture.translation.width
-                        })
-                            .onEnded({ gesture in
-                                withAnimation{
-                                    if gesture.translation.width < -200 {
-                                        self.offset.width = -400
-                                        cardOpacity = 0
-                                        showNewCard()
-                                    } else if  gesture.translation.width > 200{
-                                        self.offset.width = 400
-                                        cardOpacity = 0
-                                        showNewCard(true)
-                                    }
-                                    else {
-                                        self.offset.width = 0
-                                    }
-                                }
+            ZStack{
+                Rectangle()
+                    .fill(LinearGradient(colors: [.orange, .yellow], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .ignoresSafeArea()
+                VStack {
+                    CardView( vm: vm)
+                        .shadow(color: colorScheme == .dark ? .white.opacity(0.2) : .black.opacity(0.2), radius: 6)
+                        .rotation3DEffect(Angle(degrees: cardRotation), axis: (x: 0, y: 1, z: 0))
+                        .offset(offset)
+                        .opacity(cardOpacity)
+                        .gesture(DragGesture()
+                            .onChanged({ gesture in
+                                self.offset.width = gesture.translation.width
                             })
-                    )
-                
-                Spacer()
-                
-                HStack {
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.yellow)
-                            .frame(height: 40)
-                        Text("Truth")
-                    }.onTapGesture {
-                        withAnimation {
-                            cardRotation = 180
-                            cardOpacity = 0
+                                .onEnded({ gesture in
+                                    withAnimation{
+                                        if gesture.translation.width < -200 {
+                                            self.offset.width = -400
+                                            cardOpacity = 0
+                                            showNewCard()
+                                        } else if  gesture.translation.width > 200{
+                                            self.offset.width = 400
+                                            cardOpacity = 0
+                                            showNewCard(true)
+                                        }
+                                        else {
+                                            self.offset.width = 0
+                                        }
+                                    }
+                                })
+                        )
+                    
+                    Spacer()
+                    
+                    HStack {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
+                                .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
+                                .frame(height: 40)
+                            Text("Truth")
+                        }.onTapGesture {
+                            withAnimation {
+                                cardRotation = 180
+                                cardOpacity = 0
+                            }
+                            showNewCard()
                         }
-                        showNewCard()
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
+                                .frame(width: 40, height: 40)
+                                .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
+                            Image(systemName: "gearshape")
+                        }.onTapGesture {
+                            settingspresented = true
+                        }
+                        
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
+                                .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
+                                .frame(height: 40)
+                            Text("Dare")
+                        }.onTapGesture {
+                            withAnimation {
+                                cardRotation = 180
+                                cardOpacity = 0
+                            }
+                            showNewCard(true)
+                        }
                     }
                     
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(colorScheme == .dark ? Color.black : Color.white)
-                            .frame(width: 40, height: 40)
-                            .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
-                        Image(systemName: "gearshape")
-                    }.onTapGesture {
-                        settingspresented = true
-                    }
                     
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 8)
-                            .fill(Color.orange)
-                            .frame(height: 40)
-                        Text("Dare")
-                    }.onTapGesture {
-                        withAnimation {
-                            cardRotation = 180
-                            cardOpacity = 0
-                        }
-                        showNewCard(true)
+                    Text("\(truthCards.count) Karten")
+                    
+                    
+                }.padding()
+                    .sheet(isPresented: $settingspresented) {
+                        SettingsView(vm: vm)
                     }
-                }
-                
-                
-                Text("\(truthCards.count) Karten")
-                
-                
-            }.padding()
-                .sheet(isPresented: $settingspresented) {
-                    SettingsView(vm: vm)
-                }
+            }
         }
     }
     
