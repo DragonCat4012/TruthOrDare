@@ -33,12 +33,14 @@ struct ContentView: View {
     @State var cardOpacity = 1.0
     
     @State var settingspresented: Bool = false
+    @State var cardRotation = 0.0
     
     
     var body: some View {
         GeometryReader{ geometry in
             VStack {
                 CardView( vm: vm)
+                    .rotation3DEffect(Angle(degrees: cardRotation), axis: (x: 0, y: 1, z: 0))
                     .offset(offset)
                     .opacity(cardOpacity)
                     .gesture(DragGesture()
@@ -73,9 +75,10 @@ struct ContentView: View {
                         Text("Truth")
                     }.onTapGesture {
                         withAnimation {
+                            cardRotation = 180
                             cardOpacity = 0
-                            offset.height = -200
                         }
+                        cardRotation = 0
                         showNewCard()
                     }
                     
@@ -96,9 +99,10 @@ struct ContentView: View {
                         Text("Dare")
                     }.onTapGesture {
                         withAnimation {
+                            cardRotation = 180
                             cardOpacity = 0
-                            offset.height = -200
                         }
+                        cardRotation = 0
                         showNewCard(true)
                     }
                 }
@@ -115,17 +119,17 @@ struct ContentView: View {
     }
     
     func showNewCard(_ dare: Bool = false){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+        self.cardOpacity = 0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.offset.width = 0
             self.offset.height = 0
+            vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
             
             withAnimation{
-                vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
                 self.cardOpacity = 1
             }
         }
     }
-
 }
 
 
