@@ -27,7 +27,9 @@ struct CreateCard: View {
             
             Picker("Category: ", selection: $selectedCategory) {
                 ForEach(Category.allCases, id: \.rawValue) { cat in
-                    Text(categoryString(cat))
+                    if cat != .all {
+                        Text(categoryString(cat))
+                    }
                 }
             }
             
@@ -46,10 +48,8 @@ struct CreateCard: View {
                 cardGroupactivity = false
                 selectedCategory = 2
             }
-            
-        }.padding()
+        }
     }
-    
     
     private func addItem() {
         let newItem = Item(context: viewContext)

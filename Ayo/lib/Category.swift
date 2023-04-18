@@ -9,7 +9,7 @@ import Foundation
 
 
 enum Category: Int, CaseIterable {
-    case sporty = 1, familyfriendly = 2, nsfw = 3, cringe = 4
+    case all = 0, sporty = 1, familyfriendly = 2, nsfw = 3, cringe = 4
 }
 
 
@@ -38,6 +38,8 @@ func categoryString(_ cat: Category) -> String {
         return "NSFW"
     case .cringe:
         return"Cringe"
+    case .all:
+        return "all"
     }
 }
 
@@ -52,5 +54,7 @@ func categoryIcon(_ num: Int64) -> String{
         return "18.circle"
     case .cringe:
         return  "party.popper"
+    case .all:
+        return "questionmark"
     }
 }

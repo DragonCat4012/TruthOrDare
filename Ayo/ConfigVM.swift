@@ -27,7 +27,10 @@ class Config: ObservableObject {
         fetchRequest = Item.fetchRequest()
         
         fetchRequest.entity = Item.entity()
-        fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: activeCategory))
+        if activeCategory != 0 {
+            fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: activeCategory))
+        }
+        
         do {
             let objects = try viewContext.fetch(fetchRequest)
             activeSet = objects
