@@ -1,0 +1,31 @@
+/* 
+ Localizable.strings
+ Ayo
+ 
+ Created by Kiara on 18.04.23.
+ 
+ */
+
+"truth" = "Truth";
+"dare" = "dare";
+
+"noCards" = "No cards :c";
+"noActiveCard" = "No active Card selected, swipe or press button to start :3";
+"noText" = "No Text :c";
+"%lld cardCount" = "%lld Cards";
+
+"category" = "Category: ";
+"changeCategory" = "Change active category";
+"%@ activeCount %@" = "%@ of %@ cards active";
+"manageCards" = "Manage Cards";
+"loadDefault" = "Load default Data";
+"exportData" = "Export all Data";
+"deleteData" = "Delete all Cards";
+"settings" = "Settings";
+
+"cardHeadline" = "Create new Card";
+"cardDesc" = "Card description";
+"cardTruth" = "Is Truth";
+"cardShots" = "Is shots";
+"cardGroup" = "Is groupActivity";
+"addCard" = "add card";

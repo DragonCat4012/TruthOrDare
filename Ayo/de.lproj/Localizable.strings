@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Ayo
+
+  Created by Kiara on 18.04.23.
+  
+*/
+
+
+"truth" = "Wahrheit";
+"dare" = "Pflicht";
+
+"noCards" = "No cards :c";
+"noActiveCard" = "Keine aktive Karte ausgewählt :3";
+"noText" = "Kein Text :c";
+"%lld cardCount" = " %lld Karten";
+
+
+"category" = "Kategorie: ";
+"changeCategory" = "Ändern aktiver Kategorie";
+"%lld activeCount %lld" = "%lld von %lld Karten aktiv";
+"manageCards" = "Karten verwalten";
+"loadDefault" = "Demo Daten laden";
+"exportData" = "Karten exportieren";
+"deleteData" = "Alle Karten löschen";
+"settings" = "Einstellungen";
+
+"cardHeadline" = "Neue Karte";
+"cardDesc" = "Kartenbeschreibung";
+"cardTruth" = "Ist Wahrheit";
+"cardShots" = "Ist Shots";
+"cardGroup" = "Ist Gruppenaufgabe";
+"addCard" = "Karte hinzufügen";
+

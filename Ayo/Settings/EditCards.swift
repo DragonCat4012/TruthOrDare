@@ -17,13 +17,13 @@ struct EditCardsView: View {
     
     var body: some View {
         if items.isEmpty {
-            Text("no items qwq")
+            Text("noCards")
         } else {
             List{
                 Section{
                     HStack{
                         Text("ID")
-                        Text("card description")
+                        Text("cardDesc")
                             .lineLimit(1)
                     }
                 }

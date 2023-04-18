@@ -30,22 +30,22 @@ struct SettingsView: View {
             List{
                 Section {
                     VStack{
-                        Text("Change active category")
+                        Text("changeCategory")
                             .fontWeight(.bold)
-                        Picker("Category: ", selection: $vm.activeCategory) {
+                        Picker("category", selection: $vm.activeCategory) {
                             ForEach(Category.allCases, id: \.rawValue) { cat in
                                 Text(categoryString(cat))
                             }
                         }
-                        Text("\(vm.activeSet.count) of \(items.count) cards active")
+                        Text("\(vm.activeSet.count) activeCount \(items.count)")
                             .font(.footnote)
                     }
                     
                     NavigationLink {
                         EditCardsView()
-                            .navigationTitle("Manage Cards")
+                            .navigationTitle("manageCards")
                     } label: {
-                        Text("Manage Cards")
+                        Text("manageCards")
                     }
                 }
                 
@@ -57,24 +57,24 @@ struct SettingsView: View {
                     Button {
                         loadDemoData()
                     } label: {
-                        Text("Load default Data")
+                        Text("loadDefault")
                     }
                     /* Button {
                      exportData()
                      } label: {
-                     Text("Export all Data")
+                     Text("exportData")
                      }*/
                     Button(role: .destructive) {
                         addDefaultData()
                     } label: {
-                        Text("Delete all Cards")
+                        Text("deleteData")
                     }
                 }
             }
             .onChange(of: vm.activeCategory) { _ in
                 vm.setSet(viewContext)
             }
-            .navigationTitle("Settings")
+            .navigationTitle("settings")
             .sheet(isPresented: $showDocumentSheet) {
                 Text("ay")
                 ShareLink(item: fileURL!, preview:SharePreview("JSON"))

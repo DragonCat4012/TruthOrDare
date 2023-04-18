@@ -10,7 +10,7 @@
 		F16C8FB429E03F99003417A0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB329E03F99003417A0 /* SettingsView.swift */; };
 		F16C8FB629E076E8003417A0 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16C8FB529E076E8003417A0 /* Category.swift */; };
 		F1A5179F29E5D12B00113AFF /* JSONUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A5179E29E5D12B00113AFF /* JSONUtil.swift */; };
-		F1A8D7FE29EEEE8600608BA1 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1A8D7FD29EEEE8600608BA1 /* ButtonStyle.swift */; };
+		F1A8D80429EEF6FA00608BA1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F1A8D80629EEF6FA00608BA1 /* Localizable.strings */; };
 		F1B221BB29E2E8EC00A97835 /* CreateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BA29E2E8EC00A97835 /* CreateCard.swift */; };
 		F1B221BD29E2FEE500A97835 /* ConfigVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BC29E2FEE500A97835 /* ConfigVM.swift */; };
 		F1B221BF29E30ADD00A97835 /* EditCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B221BE29E30ADD00A97835 /* EditCards.swift */; };
@@ -28,8 +28,9 @@
 		F16C8FB329E03F99003417A0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F16C8FB529E076E8003417A0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F1A5179E29E5D12B00113AFF /* JSONUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtil.swift; sourceTree = "<group>"; };
-		F1A8D7FD29EEEE8600608BA1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		F1A8D80129EEF52A00608BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F1A8D80529EEF6FA00608BA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F1A8D80729EEF70C00608BA1 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F1B221BA29E2E8EC00A97835 /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
 		F1B221BC29E2FEE500A97835 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
 		F1B221BE29E30ADD00A97835 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 				F1C00D7029E03AE9003BE352 /* Persistence.swift */,
 				F16C8FB529E076E8003417A0 /* Category.swift */,
 				F1A5179E29E5D12B00113AFF /* JSONUtil.swift */,
-				F1A8D7FD29EEEE8600608BA1 /* ButtonStyle.swift */,
 			);
 			path = lib;
 			sourceTree = "<group>";
@@ -106,6 +106,7 @@
 				F1C00D7A29E03B35003BE352 /* CardView.swift */,
 				F1B38A1F29E99DC500DD182D /* Settings */,
 				F1B38A2029E99DE400DD182D /* lib */,
+				F1A8D80629EEF6FA00608BA1 /* Localizable.strings */,
 			);
 			path = Ayo;
 			sourceTree = "<group>";
@@ -152,6 +153,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = F1C00D5B29E03AE8003BE352;
 			productRefGroup = F1C00D6529E03AE8003BE352 /* Products */;
@@ -169,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B347F429E8524E00C2F2A2 /* demo.json in Resources */,
+				F1A8D80429EEF6FA00608BA1 /* Localizable.strings in Resources */,
 				F1C00D6C29E03AE9003BE352 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,7 +183,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1A8D7FE29EEEE8600608BA1 /* ButtonStyle.swift in Sources */,
 				F1C00D7129E03AE9003BE352 /* Persistence.swift in Sources */,
 				F1C00D7429E03AE9003BE352 /* Ayo.xcdatamodeld in Sources */,
 				F1C00D6A29E03AE8003BE352 /* ContentView.swift in Sources */,
@@ -198,11 +200,24 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		F1A8D80629EEF6FA00608BA1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1A8D80529EEF6FA00608BA1 /* en */,
+				F1A8D80729EEF70C00608BA1 /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		F1C00D7529E03AE9003BE352 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -263,6 +278,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

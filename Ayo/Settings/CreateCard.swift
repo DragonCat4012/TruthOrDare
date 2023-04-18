@@ -19,13 +19,13 @@ struct CreateCard: View {
     
     var body: some View {
         VStack {
-            Text("Create new Card").fontWeight(.bold)
-            TextField("Card description", text: $description)
-            Toggle("Is Truth", isOn: $cardTruth)
-            Toggle("Is shots", isOn: $cardShots)
-            Toggle("Is groupActivity", isOn: $cardGroupactivity)
+            Text("cardHeadline").fontWeight(.bold)
+            TextField("cardDesc", text: $description)
+            Toggle("cardTruth", isOn: $cardTruth)
+            Toggle("cardShots", isOn: $cardShots)
+            Toggle("cardGroup", isOn: $cardGroupactivity)
             
-            Picker("Category: ", selection: $selectedCategory) {
+            Picker("category", selection: $selectedCategory) {
                 ForEach(Category.allCases, id: \.rawValue) { cat in
                     if cat != .all {
                         Text(categoryString(cat))
@@ -37,7 +37,7 @@ struct CreateCard: View {
                 RoundedRectangle(cornerRadius: 8)
                     .fill(description == "" ? Color.gray : Color.orange)
                     .frame(height: 40)
-                Text("add card")
+                Text("addCard")
             }.onTapGesture {
                 print(selectedCategory)
                 if description == "" {return}

@@ -19,7 +19,6 @@ struct ContentView: View {
     @State var settingspresented: Bool = false
     @State var cardRotation = 0.0
     
-    
     var body: some View {
         GeometryReader{ geometry in
             ZStack{
@@ -62,7 +61,7 @@ struct ContentView: View {
                                 .fill(colorScheme == .dark ? Color.black : Color.white)
                                 .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
                                 .frame(height: 40)
-                            Text("Truth")
+                            Text("truth")
                         }.onTapGesture {
                             withAnimation {
                                 cardRotation = 180
@@ -82,8 +81,13 @@ struct ContentView: View {
                             settingspresented = true
                         }
                         
-                        UserButton(text: "Dare")
-                            .environmentObject(vm)
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 8)
+                                .fill(colorScheme == .dark ? Color.black : Color.white)
+                                .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
+                                .frame(height: 40)
+                            Text("dare")
+                        }
                         .onTapGesture {
                             withAnimation {
                                 cardRotation = 180
@@ -93,14 +97,12 @@ struct ContentView: View {
                         }
                         .allowsHitTesting(vm.dareActive)
                     }
-                    
-                    Text("\(vm.activeSet.count) Karten")
+                    Text("\(vm.activeSet.count) cardCount")
                     
                 }.padding()
                     .sheet(isPresented: $settingspresented) {
                         SettingsView(vm: vm)
                     }
-                
                     .onAppear{
                         vm.setSet(viewContext)
                     }
@@ -114,7 +116,7 @@ struct ContentView: View {
             cardRotation = 0
             self.offset.width = 0
             self.offset.height = 0
-             dare ? vm.loadDares() : vm.loadTruths()
+            dare ? vm.loadDares() : vm.loadTruths()
             
             withAnimation(.spring()){
                 self.cardOpacity = 1
