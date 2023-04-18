@@ -29,6 +29,7 @@
 		F16C8FB529E076E8003417A0 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F1A5179E29E5D12B00113AFF /* JSONUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONUtil.swift; sourceTree = "<group>"; };
 		F1A8D7FD29EEEE8600608BA1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		F1A8D80129EEF52A00608BA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F1B221BA29E2E8EC00A97835 /* CreateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCard.swift; sourceTree = "<group>"; };
 		F1B221BC29E2FEE500A97835 /* ConfigVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigVM.swift; sourceTree = "<group>"; };
 		F1B221BE29E30ADD00A97835 /* EditCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCards.swift; sourceTree = "<group>"; };
@@ -95,6 +96,7 @@
 		F1C00D6629E03AE8003BE352 /* Ayo */ = {
 			isa = PBXGroup;
 			children = (
+				F1A8D80129EEF52A00608BA1 /* Info.plist */,
 				F1B347F329E8524E00C2F2A2 /* demo.json */,
 				F1C00D6729E03AE8003BE352 /* AyoApp.swift */,
 				F1B221BC29E2FEE500A97835 /* ConfigVM.swift */,
@@ -322,8 +324,8 @@
 				DEVELOPMENT_TEAM = 93TVBDWQK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ayo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Truth or Dare";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -353,8 +355,8 @@
 				DEVELOPMENT_TEAM = 93TVBDWQK4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Ayo/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Truth or Dare";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
