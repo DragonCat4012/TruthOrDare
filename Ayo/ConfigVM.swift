@@ -12,7 +12,7 @@ import CoreData
 class Config: ObservableObject {
     @Published var activeCard: Item?
     @Published var activeSet: [Item] = []
-    @Published var activeCategory = 2
+    @Published var activeCategory = 0
     
     @Published var truthActive = true
     @Published var dareActive = true
@@ -30,6 +30,7 @@ class Config: ObservableObject {
         if activeCategory != 0 {
             fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: activeCategory))
         }
+        // TODO: filter out blocked
         
         do {
             let objects = try viewContext.fetch(fetchRequest)
