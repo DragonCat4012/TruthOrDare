@@ -13,22 +13,6 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var vm = Config()
     
-    
-    @FetchRequest(
-        entity: Item.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
-        predicate: NSPredicate(format: "truth == %@", NSNumber(value: true)),
-        animation: .default)
-    var truthCards: FetchedResults<Item>
-    
-    
-    @FetchRequest(
-        entity: Item.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.truth, ascending: true)],
-        predicate: NSPredicate(format: "truth == %@", NSNumber(value: false)),
-        animation: .default)
-    var dareCards: FetchedResults<Item>
-    
     @State var offset = CGSize(width: 0, height: 0)
     @State var cardOpacity = 1.0
     
@@ -86,6 +70,7 @@ struct ContentView: View {
                             }
                             showNewCard()
                         }
+                        .allowsHitTesting(vm.truthActive)
                         
                         ZStack {
                             RoundedRectangle(cornerRadius: 8)
@@ -97,28 +82,27 @@ struct ContentView: View {
                             settingspresented = true
                         }
                         
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 8)
-                                .fill(colorScheme == .dark ? Color.black : Color.white)
-                                .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
-                                .frame(height: 40)
-                            Text("Dare")
-                        }.onTapGesture {
+                        UserButton(text: "Dare")
+                            .environmentObject(vm)
+                        .onTapGesture {
                             withAnimation {
                                 cardRotation = 180
                                 cardOpacity = 0
                             }
                             showNewCard(true)
                         }
+                        .allowsHitTesting(vm.dareActive)
                     }
                     
-                    
-                    Text("\(truthCards.count) Karten")
-                    
+                    Text("\(vm.activeSet.count) Karten")
                     
                 }.padding()
                     .sheet(isPresented: $settingspresented) {
                         SettingsView(vm: vm)
+                    }
+                
+                    .onAppear{
+                        vm.setSet(viewContext)
                     }
             }
         }
@@ -130,7 +114,7 @@ struct ContentView: View {
             cardRotation = 0
             self.offset.width = 0
             self.offset.height = 0
-            vm.activeCard =  dare ? dareCards.randomElement() : truthCards.randomElement()
+             dare ? vm.loadDares() : vm.loadTruths()
             
             withAnimation(.spring()){
                 self.cardOpacity = 1

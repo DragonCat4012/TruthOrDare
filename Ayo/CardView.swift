@@ -24,9 +24,11 @@ struct CardView: View {
         let card = vm.activeCard
         ZStack {
             if (card == nil) {
-                RoundedRectangle(cornerRadius: 8).fill(colorScheme == .dark ? Color.black : Color.white)
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(color: colorScheme == .dark ? .white.opacity(0.7) : .black.opacity(0.7), radius: 3)
                 Text("No active Card selected, swipe or press button to start :3")
+                    .multilineTextAlignment(.center)
             } else{
                 let card = vm.activeCard!
                 let cat = getCategory(card.category)
@@ -35,7 +37,7 @@ struct CardView: View {
                     .fill(colorScheme == .dark ? Color.black : Color.white)
                     .shadow(radius: 5)
                 
-                VStack {
+                VStack() {
                     HStack {
                         if card.groupActivity {
                             Image(systemName: "person.2.fill")
@@ -45,8 +47,8 @@ struct CardView: View {
                         
                         HStack{
                             Image(systemName: categoryIcon(card.category))
-                            Text(categoryString(cat))
-                            Image(systemName: categoryIcon(card.category))
+                          //  Text(categoryString(cat))
+                          //  Image(systemName: categoryIcon(card.category))
                         }
                         Spacer()
                         if card.shots {
@@ -57,6 +59,7 @@ struct CardView: View {
                     Spacer()
                     
                     Text(card.text ?? "No text")
+                        .multilineTextAlignment(.center)
                         .font(.headline)
                     
                     Spacer()

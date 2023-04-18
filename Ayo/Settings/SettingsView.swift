@@ -18,7 +18,6 @@ struct SettingsView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-    @State var activeItems = 0
     @State var showDocumentSheet = false
     @State var showLoading = false
     
@@ -38,7 +37,7 @@ struct SettingsView: View {
                                 Text(categoryString(cat))
                             }
                         }
-                        Text("\(activeItems) of \(items.count) cards active")
+                        Text("\(vm.activeSet.count) of \(items.count) cards active")
                             .font(.footnote)
                     }
                     
@@ -71,12 +70,9 @@ struct SettingsView: View {
                         Text("Delete all Cards")
                     }
                 }
-                
-            }.onAppear{
-                getActiveCards()
             }
             .onChange(of: vm.activeCategory) { _ in
-                getActiveCards()
+                vm.setSet(viewContext)
             }
             .navigationTitle("Settings")
             .sheet(isPresented: $showDocumentSheet) {
@@ -85,19 +81,6 @@ struct SettingsView: View {
                 //  DocumentPicker(fileURL: $vm.importeJsonURL).onDisappear{ vm.reloadAndSave()}
             }
         }
-    }
-    
-    func getActiveCards() {
-        let fetchRequest: NSFetchRequest<Item>
-        fetchRequest = Item.fetchRequest()
-        
-        fetchRequest.entity = Item.entity()
-        fetchRequest.predicate = NSPredicate(format: "category == %@", NSNumber(value: vm.activeCategory))
-        do {
-            let objects = try viewContext.fetch(fetchRequest)
-            activeItems = objects.count
-        } catch {}
-        
     }
     
     private func deleteItems(offsets: IndexSet) {
